@@ -761,9 +761,20 @@ def main():
     elif args.command == "search":
         mind = MyMind()
         results = mind.search(args.query)
-        for c in results:
-            print(f"  {c.slug}  {c.title or '(untitled)'}")
-        print(f"\n{len(results)} results")
+        matches = results.get("matches", [])
+        if not matches:
+            print("No results.")
+        else:
+            all_cards = mind.get_all_cards()
+            card_map = {c.slug: c for c in all_cards}
+            for m in matches:
+                c = card_map.get(m["id"])
+                if c:
+                    tags_str = f" [{', '.join(c.tags)}]" if c.tags else ""
+                    print(f"  {c.slug}  {c.title or '(untitled)'}{tags_str}")
+                else:
+                    print(f"  {m['id']}  (card not found)")
+            print(f"\n{len(matches)} results")
 
     elif args.command == "note":
         mind = MyMind()
