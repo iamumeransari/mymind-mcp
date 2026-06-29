@@ -1,6 +1,7 @@
 # mymind MCP
 
-<img width="1920" height="1080" alt="Listing Screenshot" src="https://github.com/user-attachments/assets/c9e50fe8-d94a-4da3-beb6-e1c9482abe11" />
+<img width="1280" height="800" alt="mymind MCP - Hero" src="https://github.com/user-attachments/assets/7064eb5a-a5a8-46e0-8792-20a8e540ece9" />
+
 
 ‎<p></p>
 ‎
